@@ -1,9 +1,10 @@
 import {ReactNode} from 'react'
+
+
 export type Goal = {
   id: number,
   title: string,
   description: string,
-  
 }
 
 export type GoalList = {
@@ -20,5 +21,10 @@ export type CourseProps = {
 
 export type NewGoalProps = {
   onAddGoal: (goal: string, summery: string) => void
+}
+
+export type InfoBoxProps = {
+  mode: 'hint' | 'warning',
+  children: ReactNode,
 }
 
