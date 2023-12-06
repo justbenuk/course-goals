@@ -1,17 +1,17 @@
 import { InfoBoxProps } from "../types"
-export default function InfoBox({ children, mode }: InfoBoxProps) {
+export default function InfoBox(props: InfoBoxProps) {
 
-  if (mode === 'hint') {
+  if (props.mode === 'hint') {
     return (
       <aside className="infobox infobox-hint">
-        <p>{children}</p>
+        <p>{props.children}</p>
       </aside>
     )
   } else {
     return (
-      <aside className="infobox infobox-warning warning--low">
+      <aside className={`infobox infobox-warning warning--${props.scale}`}>
         <h2>Warning</h2>
-        <p>{children}</p>
+        <p>{props.children}</p>
       </aside>
     )
   }

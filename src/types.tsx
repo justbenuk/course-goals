@@ -23,8 +23,16 @@ export type NewGoalProps = {
   onAddGoal: (goal: string, summery: string) => void
 }
 
-export type InfoBoxProps = {
-  mode: 'hint' | 'warning',
+type HintBoxProps = {
+  mode: 'hint',
+  children: ReactNode
+}
+
+type WarningBoxProps = {
+  mode: 'warning',
+  scale: 'low' | 'medium' | 'high',
   children: ReactNode,
 }
+
+export type InfoBoxProps = HintBoxProps | WarningBoxProps
 
